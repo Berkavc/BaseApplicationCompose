@@ -1,4 +1,4 @@
-# NoteApp
+# MovieApp
 
 Challenge:
 Create a simple Android app that allows the user to search for movies.
@@ -23,4 +23,4 @@ Bonus objective:
 • CI Integration(GitHub Actions)
 • UI test
 • Design
-# MovieApp
+
