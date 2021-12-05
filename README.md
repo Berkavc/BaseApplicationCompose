@@ -1,42 +1,26 @@
 # NoteApp
 
-### Deadline
-
-We'll be waiting for your solution within 4 days.
-
-### Goal ###
-
-Develop a simple note app that allows the user to save/edit/delete any kind of note and display them in a list.
-
-### Functional Requirements ###
-
-* Kotlin is preferred but not a must.
-* Users must be able to create notes with input fields such as title, description, image url (input can be optional) and store it locally on their phones.
-* Created note must contain a created date.
-* There must be a way to display all saved notes in the list. An item on the list must contain the created date (dd/mm/yyyy), the image if url is available, title and max. 2 lines of description.
-* There must be a way to edit/delete previously created notes. But edited notes must contain an (edited) tag somewhere while being displayed on the list.
-* All data should be persisted locally.
-
-### UI Suggestions ###
-
-It doesn't need to be super pretty, but it shouldn't be broken as well. The design is mostly up to you as long as creating, listing and editing/deleting features are available to use.
-
-Nice to have:
-* Animations/Transitions
-* At least one custom view
-
-### Expectations ###
-
-Consider this as a showcase of your skills.
-Approach it as if you are going to make a pull request on our main/master branch.
-
-We are expecting at least:
-* Clear, defined architecture.
-* Apply the Material Design Guidelines as much as possible.
-* Meaningful tests (You do not need to have 100% coverage, but we will be looking for tests).
-* Good and lint verified syntax.
-* We expect a clear history in the repo. We don't mind your choice of git strategy as long as it has a track of your progress.
-* The repo must be private and should not contain any references to Getir in it.
-* The code must compile.
-* The code must be production ready. Unit tests are expected.
+Challenge:
+Create a simple Android app that allows the user to search for movies.
+API:
+Please choose the following from the themoviedb REST API:
+https://developers.themoviedb.org/3/search/search-movies
+Requirements:
+• Should be developed in Kotlin with use of Android Architecture Components.
+• The application should have
+o Search bar
+o Display results in a list
+o Each Item in list should have movie poster image, movie name, movie overview
+and release date in following format – Nov 30, 1982 .
+• Use the themoviedb REST API
+• Tapping on a cell should open the selected movie details in the default system browser.
+Sample URL - https://www.themoviedb.org/movie/<movie_id>
+• At least one unit test.
+Requirements:
+Provide your result via your preferred version control system host and send the repository URL
+or an invite.
+Bonus objective:
+• CI Integration(GitHub Actions)
+• UI test
+• Design
 # MovieApp
