@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name" translatable="false">MovieApp</string>
+    <string name="label_fragment_movie" translatable="false">fragmentMovie</string>
+
+    <!-- 1) Error Strings: -->
+
+
+    <!-- 2) UI Strings: -->
+
+    <!--2.1) Movie Page -->
+    <string name="movie_page_search_hint">Search Movie…</string>
+    <string name="movie_page_item_title">Title: %1$s</string>
+    <string name="movie_page_item_over_view">Overview: %1$s</string>
+    <string name="movie_page_item_date"><![CDATA[Release Date: <u>%1$s</u>]]></string>
+
+</resources>

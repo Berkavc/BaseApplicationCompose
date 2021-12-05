@@ -1,0 +1,11 @@
+<resources>
+    <!-- 1) Error Strings: -->
+
+    <!--1.1) Error Dialog -->
+    <string name="error_dialog_failure_message">Cannot access the server at the moment, please try again!</string>
+    <string name="error_dialog_ok_message">Continue</string>
+    <string name="error_dialog_create_new_note_rule">Title cannot be empty!</string>
+
+    <!-- 2) UI Strings: -->
+
+</resources>

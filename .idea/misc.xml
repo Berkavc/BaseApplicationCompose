@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/bg_note_item_label.xml" value="0.35384615384615387" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.35384615384615387" />
+        <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.35384615384615387" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.23822463768115942" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.23822463768115942" />
+        <entry key="app/src/main/res/layout/fragment_movie.xml" value="0.16691995947315097" />
+        <entry key="app/src/main/res/layout/fragment_note.xml" value="0.23822463768115942" />
+        <entry key="app/src/main/res/layout/item_recyclerview_movie.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/layout/item_recyclerview_note.xml" value="0.23822463768115942" />
+        <entry key="common/src/main/res/drawable/bg_black_box.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/bg_orange_label.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/bg_red_label.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/bg_white_label.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/bg_white_label_no_corner.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/black_cursor.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/ic_add_photo.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/ic_close.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/drawable/ic_description.xml" value="0.35384615384615387" />
+        <entry key="common/src/main/res/layout/activity_error_dialog.xml" value="0.25" />
+        <entry key="common/src/main/res/layout/dialog_create_new_note.xml" value="0.20885416666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

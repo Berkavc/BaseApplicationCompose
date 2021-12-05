@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<style name="defaultTextView">
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@string/font_family_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textCursorDrawable">@drawable/black_cursor</item>
+    </style>
+
+    <style name="defaultTextViewRecyclerView">
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@string/font_family_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="defaultButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_family_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/bg_orange_label</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="defaultEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_white_label</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/md_green_400</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:fontFamily">@string/font_family_regular</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <style name="defaultTextViewTitle" parent="defaultTextView">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="defaultTextViewDescription" parent="defaultTextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@string/font_family_condensed</item>
+    </style>
+
+    <style name="defaultProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:visibility">gone</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="defaultSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:iconifiedByDefault">false</item>
+        <item name="android:queryBackground">@color/white</item>
+        <!--        <item name="android:searchIcon">@drawable/ic_search_view</item>-->
+        <item name="android:background">@drawable/bg_white_label</item>
+    </style>
+
+    <style name="defaultTextViewDescriptionEyeBubble" parent="defaultTextViewDescription">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+
+    <!-- Error Dialog -->
+    <style name="ErrorDialogButton" parent="defaultButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_red_label</item>
+    </style>
+
+    <style name="Theme_Dialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@color/transparent_background</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="defaultErrorTexts" parent="defaultTextView">
+        <item name="android:textColor">@color/md_red_400</item>
+    </style>
+
+    <style name="defaultEditTextMulti" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_white_label</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="hintTextColor">@color/md_green_400</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:maxLength">50</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+
+
+</resources>

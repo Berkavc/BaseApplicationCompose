@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.task.movieapp.common">
+
+    <application>
+
+    <activity
+        android:name="com.task.movieapp.common.errordialog.ErrorDialogActivity"
+        android:excludeFromRecents="true"
+        android:screenOrientation="portrait"
+        android:exported="true"
+        android:theme="@style/customErrorDialogTheme"
+        android:windowSoftInputMode="adjustPan" />
+
+</application>
+
+
+</manifest>
