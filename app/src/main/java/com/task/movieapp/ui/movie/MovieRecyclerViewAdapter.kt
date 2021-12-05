@@ -16,6 +16,7 @@ import com.task.movieapp.common.utils.convertDateFormatToLong
 import com.task.movieapp.common.utils.convertLongToDateFormat
 import com.task.movieapp.common.utils.glideWithDrawable
 import com.task.movieapp.databinding.ItemRecyclerviewMovieBinding
+import com.task.movieapp.domain.IMAGE_URL
 import com.task.movieapp.domain.model.Result
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -95,7 +96,7 @@ class MovieRecyclerViewAdapter(
 
             glideWithDrawable(
                 context = context,
-                url = item.poster_path,
+                url = IMAGE_URL + item.poster_path,
                 imageView = binding.imageViewRecyclerViewMovie,
                 placeholder = ContextCompat.getDrawable(
                     context,
