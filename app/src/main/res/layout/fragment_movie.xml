@@ -66,6 +66,18 @@
             app:queryHint="@string/movie_page_search_hint">
         </androidx.appcompat.widget.SearchView>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonMovieTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/movie_page_try_again"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </androidx.appcompat.widget.AppCompatButton>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewMovies"
             android:layout_width="0dp"

@@ -12,6 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.task.movieapp.databinding.FragmentMovieBinding
 import timber.log.Timber
 import androidx.appcompat.widget.SearchView
+import com.task.movieapp.common.utils.clickWithThrottle
 import com.task.movieapp.common.utils.sendToHyperLink
 
 @AndroidEntryPoint
@@ -26,6 +27,7 @@ class MovieFragment : BaseFragment<MovieViewModel, FragmentMovieBinding>() {
         viewModel.movieList.observe(viewLifecycleOwner, {
             when (it) {
                 is ResultData.Success -> {
+                    binding.buttonMovieTryAgain.visibility = View.GONE
                     Timber.e("data_success")
                     it.data?.let {
                         if (it.size > 0) {
@@ -37,6 +39,7 @@ class MovieFragment : BaseFragment<MovieViewModel, FragmentMovieBinding>() {
                     Timber.e("data_loading")
                 }
                 is ResultData.Failed -> {
+                    binding.buttonMovieTryAgain.visibility = View.VISIBLE
                     Timber.e("data_failed")
                 }
             }
@@ -45,6 +48,10 @@ class MovieFragment : BaseFragment<MovieViewModel, FragmentMovieBinding>() {
     }
 
     override fun viewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.fetchMoviesList()
+    }
+
+    override fun arrangeUI() {
         binding.searchViewMovie.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -56,11 +63,10 @@ class MovieFragment : BaseFragment<MovieViewModel, FragmentMovieBinding>() {
             }
 
         })
-        viewModel.fetchMoviesList()
-    }
-
-    override fun arrangeUI() {
         arrangeNotesRecyclerView()
+        binding.buttonMovieTryAgain.clickWithThrottle {
+            viewModel.fetchMoviesList()
+        }
     }
 
     private fun arrangeNotesRecyclerView() {
