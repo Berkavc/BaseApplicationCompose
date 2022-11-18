@@ -36,7 +36,6 @@ abstract class BaseActivity<T : BaseViewModel, B : ViewDataBinding> : AppCompatA
 
     abstract fun observeViewModel()
 
-
     private var _binding: B? = null
     val binding get() = _binding!!
 
@@ -53,7 +52,6 @@ abstract class BaseActivity<T : BaseViewModel, B : ViewDataBinding> : AppCompatA
         observeLoadingAndError()
         observeViewModel()
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
@@ -75,7 +73,6 @@ abstract class BaseActivity<T : BaseViewModel, B : ViewDataBinding> : AppCompatA
                 }
             }
         }
-
     }
 
     private val loadingAlertDialog by lazy {
