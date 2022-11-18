@@ -7,16 +7,30 @@
 
     <fragment
         android:id="@+id/movieFragment"
-        android:label="@string/label_fragment_movie"
+        android:label="@string/fragment_movie_label"
         android:name="com.task.movieapp.ui.movie.MovieFragment"
         tools:layout="@layout/fragment_movie">
 
-<!--        <action
-            android:id="@+id/action_explore_to_event_detail"
-            app:destination="@id/eventDetailFragment"></action>-->
-
-
+        <action
+            android:id="@+id/action_movie_to_movie_detail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+        </action>
     </fragment>
 
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:label="@string/fragment_movie_label"
+        android:name="com.task.movieapp.ui.moviedetail.MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="result"
+            android:defaultValue="@null"
+            app:argType="com.task.movieapp.domain.model.Result"
+            app:nullable="true" />
+    </fragment>
 
 </navigation>

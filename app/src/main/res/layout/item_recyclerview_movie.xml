@@ -2,75 +2,35 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayoutRecyclerViewMovie"
+    android:id="@+id/constraintLayoutViewMovie"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:background="@drawable/bg_movie_item_label">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10">
-    </androidx.constraintlayout.widget.Guideline>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90">
-    </androidx.constraintlayout.widget.Guideline>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10">
-    </androidx.constraintlayout.widget.Guideline>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90">
-    </androidx.constraintlayout.widget.Guideline>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75">
-    </androidx.constraintlayout.widget.Guideline>
-
-
     <View
-        android:id="@+id/dummyView"
+        android:id="@+id/viewHeader"
         android:layout_width="match_parent"
         android:layout_height="15dp"
         app:layout_constraintTop_toTopOf="parent">
     </View>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewRecyclerViewMovieTitle"
+        android:id="@+id/textViewMovieTitle"
         style="@style/defaultTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewMovieLink"
         tools:text="Berk movie">
     </androidx.appcompat.widget.AppCompatTextView>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewRecyclerViewMovieDate"
+        android:id="@+id/textViewMovieDate"
         style="@style/defaultTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -79,12 +39,12 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewRecyclerViewMovieTitle"
+        app:layout_constraintTop_toBottomOf="@id/textViewMovieTitle"
         tools:text="13/11/2021">
     </androidx.appcompat.widget.AppCompatTextView>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewRecyclerViewMovieOverview"
+        android:id="@+id/textViewMovieOverview"
         style="@style/defaultTextViewDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -92,27 +52,48 @@
         android:layout_marginHorizontal="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewRecyclerViewMovieDate"
+        app:layout_constraintTop_toBottomOf="@id/textViewMovieDate"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
     </androidx.appcompat.widget.AppCompatTextView>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageViewRecyclerViewMovie"
+        android:id="@+id/imageViewMovie"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:scaleType="fitXY"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/textViewRecyclerViewMovieOverview"
+        app:layout_constraintTop_toBottomOf="@id/textViewMovieOverview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat = "@drawable/ic_description">
+        app:layout_constraintStart_toStartOf="parent">
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewMovieShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:srcCompat="@drawable/ic_share"
+        app:layout_constraintEnd_toStartOf="@id/imageViewMovieLink"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewMovieLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        app:srcCompat="@drawable/ic_link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewMovieShare"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewMovieShare">
     </androidx.appcompat.widget.AppCompatImageView>
 
     <View
-        android:id="@+id/dummyView2"
+        android:id="@+id/ViewBottom"
         android:layout_width="match_parent"
         android:layout_height="15dp"
-        app:layout_constraintTop_toBottomOf="@id/imageViewRecyclerViewMovie">
+        app:layout_constraintTop_toBottomOf="@id/imageViewMovie">
     </View>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

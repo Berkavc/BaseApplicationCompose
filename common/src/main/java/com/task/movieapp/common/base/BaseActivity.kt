@@ -97,7 +97,7 @@ abstract class BaseActivity<T : BaseViewModel, B : ViewDataBinding> : AppCompatA
         loadingAlertDialog.dismiss()
     }
 
-    fun showErrorDialog(
+    private fun showErrorDialog(
         message: String? = null,
         buttonMessage: String? = null,
         callback: () -> Unit? = {}

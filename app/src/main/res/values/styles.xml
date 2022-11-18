@@ -48,7 +48,8 @@
 
     <style name="defaultTextViewDescription" parent="defaultTextView">
         <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@string/font_family_condensed</item>
+        <item name="android:textColor">@color/md_green_800</item>
+        <item name="android:fontFamily">@string/font_family_black</item>
     </style>
 
     <style name="defaultProgressBar" parent="Widget.AppCompat.ProgressBar">

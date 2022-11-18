@@ -76,32 +76,6 @@ fun glideWithDrawable(
                 .load(url)
                 .placeholder(placeholder)
                 .error(errorPlaceHolder)
-//                    .listener(object : RequestListener<Drawable> {
-//                        override fun onLoadFailed(
-//                                e: GlideException?,
-//                                model: Any?,
-//                                target: Target<Drawable>?,
-//                                isFirstResource: Boolean
-//                        ): Boolean {
-//                            return false
-//                        }
-//
-//                        override fun onResourceReady(
-//                                resource: Drawable?,
-//                                model: Any?,
-//                                target: Target<Drawable>?,
-//                                dataSource: DataSource?,
-//                                isFirstResource: Boolean
-//                        ): Boolean {
-//                            Timber.e("glide_resource_ready!!")
-////                            coroutineCallGlideWithDrawable.launch {
-////                                withContext(Dispatchers.Main) {
-////                                    imageView.setImageDrawable(resource)
-////                                }
-////                            }
-//                            return false
-//                        }
-//                    })
             withContext(Dispatchers.Main) {
                 glide.into(imageView)
             }
@@ -109,8 +83,6 @@ fun glideWithDrawable(
     } catch (e: Exception) {
         e.printStackTrace()
     }
-
-
 }
 
 fun glideWithDrawableCircle(
@@ -128,32 +100,6 @@ fun glideWithDrawableCircle(
                 .circleCrop()
                 .placeholder(placeholder)
                 .error(errorPlaceHolder)
-//                    .listener(object : RequestListener<Drawable> {
-//                        override fun onLoadFailed(
-//                                e: GlideException?,
-//                                model: Any?,
-//                                target: Target<Drawable>?,
-//                                isFirstResource: Boolean
-//                        ): Boolean {
-//                            return false
-//                        }
-//
-//                        override fun onResourceReady(
-//                                resource: Drawable?,
-//                                model: Any?,
-//                                target: Target<Drawable>?,
-//                                dataSource: DataSource?,
-//                                isFirstResource: Boolean
-//                        ): Boolean {
-//                            Timber.e("glide_resource_ready!!")
-////                            coroutineCallGlideWithDrawable.launch {
-////                                withContext(Dispatchers.Main) {
-////                                    imageView.setImageDrawable(resource)
-////                                }
-////                            }
-//                            return false
-//                        }
-//                    })
             withContext(Dispatchers.Main) {
                 glide.into(imageView)
             }
@@ -161,59 +107,6 @@ fun glideWithDrawableCircle(
     } catch (e: Exception) {
         e.printStackTrace()
     }
-
-
-}
-
-fun glideWithListenerDrawable(
-    context: Context,
-    url: String?,
-    imageView: ImageView,
-    placeholder: Drawable? = null,
-    errorPlaceHolder: Drawable? = null,
-    uiAction: () -> Unit
-) {
-    try {
-        val coroutineCallWithDrawable = CoroutineScope(Dispatchers.IO)
-        coroutineCallWithDrawable.async {
-            val glide = GlideApp.with(context)
-                .load(url)
-                .placeholder(placeholder)
-                .error(errorPlaceHolder)
-                .listener(object : RequestListener<Drawable> {
-                    override fun onLoadFailed(
-                        e: GlideException?,
-                        model: Any?,
-                        target: Target<Drawable>?,
-                        isFirstResource: Boolean
-                    ): Boolean {
-                        return false
-                    }
-
-                    override fun onResourceReady(
-                        resource: Drawable?,
-                        model: Any?,
-                        target: Target<Drawable>?,
-                        dataSource: DataSource?,
-                        isFirstResource: Boolean
-                    ): Boolean {
-                        Timber.e("glide_resource_ready!!")
-                        coroutineCallWithDrawable.launch {
-                            withContext(Dispatchers.Main) {
-                                imageView.setImageDrawable(resource)
-                                uiAction.invoke()
-                            }
-                        }
-                        return false
-                    }
-                }).submit()
-
-        }
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-
-
 }
 
 @GlideModule

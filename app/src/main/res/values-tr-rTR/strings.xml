@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 1) Error Strings: -->
+    <!-- 1) UI Strings: -->
+    <!--1.1) Movie Page -->>
+    <string name="movie_search_hint">Film ara…</string>
+    <string name="movie_item_title">Başlık: %1$s</string>
+    <string name="movie_item_over_view">Genel Bakış: %1$s</string>
+    <string name="movie_item_over_view_empty">Genel Bakış: -</string>
+    <string name="movie_item_date"><![CDATA[Çıkış Tarihi: <u>%1$s</u>]]></string>
+    <string name="movie_try_again">Tekrar dene</string>
+    <string name="movie_share_with">Üstünden paylaş:</string>
+    <string name="movie_share_content">Çok iyi bir film buldum burdan izleyebilirsin: %1$s</string>
 
-
-    <!-- 2) UI Strings: -->
-
-    <!--2.1) Movie Page -->
-    <string name="movie_page_search_hint">Film ara…</string>
-    <string name="movie_page_item_title">Başlık: %1$s</string>
-    <string name="movie_page_item_over_view">Overview: %1$s</string>
-    <string name="movie_page_item_date"><![CDATA[Çıkış Tarihi: <u>%1$s</u>]]></string>
-    <string name="movie_page_try_again">Tekrar dene</string>
+    <!--1.2) Movie Detail Page -->
+    <string name="movie_detail_rating">Puanlama: %1$s</string>
 
 </resources>

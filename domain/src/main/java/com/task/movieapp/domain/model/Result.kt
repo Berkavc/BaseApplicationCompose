@@ -2,18 +2,18 @@ package com.task.movieapp.domain.model
 
 import java.io.Serializable
 data class Result(
-    val adult: Boolean,
-    val backdrop_path: Any,
-    val genre_ids: List<Int>,
+    val adult: Boolean? = null,
+    val backdrop_path: String? = null,
+    val genre_ids: List<Int?> = listOf(),
     val id: Int,
-    val original_language: String,
-    val original_title: String,
-    val overview: String,
-    val popularity: Double,
-    val poster_path: String,
-    val release_date: String,
+    val original_language: String? = null,
+    val original_title: String? = null,
+    val overview: String? = null,
+    val popularity: Double = 0.0,
+    val poster_path: String? = null,
+    val release_date: String? = null,
     val title: String,
-    val video: Boolean,
-    val vote_average: Double,
-    val vote_count: Int
+    val video: Boolean = false,
+    val vote_average: Double= 0.0,
+    val vote_count: Int = 0
 ):Serializable

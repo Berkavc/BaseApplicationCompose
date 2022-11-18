@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/movie/baseline_movie_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/link/baseline_link_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_moview" />
+                            <entry key="outputName" value="ic_link" />
+                            <entry key="sourceFile" value="C:\Users\berk.avcioglu\StudioProjects\MovieApp" />
                           </map>
                         </option>
                       </PersistentState>

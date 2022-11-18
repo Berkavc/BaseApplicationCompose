@@ -14,17 +14,18 @@ import timber.log.Timber
 import androidx.appcompat.widget.SearchView
 import com.task.movieapp.common.utils.clickWithThrottle
 import com.task.movieapp.common.utils.sendToHyperLink
+import com.task.movieapp.common.utils.shareUrl
+import com.task.movieapp.data.MOVIE_DETAIL_URL
 
 @AndroidEntryPoint
 class MovieFragment : BaseFragment<MovieViewModel, FragmentMovieBinding>() {
-
     override val viewModel: MovieViewModel by viewModels()
     override var layoutRes: Int = R.layout.fragment_movie
 
     private lateinit var adapterMovieRecyclerView: MovieRecyclerViewAdapter
 
     override fun observeViewModel() {
-        viewModel.movieList.observe(viewLifecycleOwner, {
+        viewModel.movies.observe(viewLifecycleOwner) {
             when (it) {
                 is ResultData.Success -> {
                     binding.buttonMovieTryAgain.visibility = View.GONE
@@ -43,12 +44,12 @@ class MovieFragment : BaseFragment<MovieViewModel, FragmentMovieBinding>() {
                     Timber.e("data_failed")
                 }
             }
-        })
+        }
 
     }
 
     override fun viewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.fetchMoviesList()
+        viewModel.fetchMovies()
     }
 
     override fun arrangeUI() {
@@ -63,39 +64,38 @@ class MovieFragment : BaseFragment<MovieViewModel, FragmentMovieBinding>() {
             }
 
         })
-        arrangeNotesRecyclerView()
+        arrangeMoviesRecyclerView()
         binding.buttonMovieTryAgain.clickWithThrottle {
-            viewModel.fetchMoviesList()
+            viewModel.fetchMovies()
         }
     }
 
-    private fun arrangeNotesRecyclerView() {
-        activity?.let {
+    private fun arrangeMoviesRecyclerView() {
+        activity?.let { act ->
             adapterMovieRecyclerView = MovieRecyclerViewAdapter(
-                it,
+                act,
                 mutableListOf()
             )
             with(binding.recyclerViewMovies) {
                 adapter = adapterMovieRecyclerView
-                layoutManager = LinearLayoutManager(it, RecyclerView.VERTICAL, false)
+                layoutManager = LinearLayoutManager(act, RecyclerView.VERTICAL, false)
                 adapterMovieRecyclerView.onItemClick = { position, item ->
-                    activity?.let {
-                        sendToHyperLink(it, item.id.toString())
-                    }
+                    navigateToNextFragment(MovieFragmentDirections.actionMovieToMovieDetail(result = item))
                 }
-
-
+                adapterMovieRecyclerView.onItemClickSendHyperLink = { position, item ->
+                    sendToHyperLink(act, item.id.toString(), MOVIE_DETAIL_URL)
+                }
+                adapterMovieRecyclerView.onItemClickShare = { position, item ->
+                    shareUrl(
+                        act,
+                        act.resources.getString(R.string.movie_share_with),
+                        act.resources.getString(
+                            R.string.movie_share_content,
+                            MOVIE_DETAIL_URL + item.id.toString()
+                        )
+                    )
+                }
             }
         }
     }
-
-    override fun gatherArgs() {}
-
-    override fun initBinding() {
-        super.initBinding()
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
-
-    }
-
 }

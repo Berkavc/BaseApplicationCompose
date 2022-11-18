@@ -6,29 +6,25 @@ import androidx.lifecycle.viewModelScope
 import com.task.movieapp.common.base.BaseViewModel
 import com.task.movieapp.domain.model.Result
 import com.task.movieapp.domain.model.ResultData
-import com.task.movieapp.domain.usecase.GetMovieUseCase
+import com.task.movieapp.domain.usecase.GetMoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
 @HiltViewModel
-class MovieViewModel @Inject constructor(
-    private val getMovieUseCase: GetMovieUseCase
-) : BaseViewModel() {
+class MovieViewModel @Inject constructor(private val getMoviesUseCase: GetMoviesUseCase) : BaseViewModel() {
+    private var _movies =
+        MutableLiveData<ResultData<MutableList<Result?>>>()
+    val movies: LiveData<ResultData<MutableList<Result?>>>
+        get() = _movies
 
-    private var _movieList =
-        MutableLiveData<ResultData<MutableList<Result>>>()
-    val movieList: LiveData<ResultData<MutableList<Result>>>
-        get() = _movieList
-
-    fun fetchMoviesList() {
+    fun fetchMovies() {
         viewModelScope.launch(Dispatchers.IO) {
-            getMovieUseCase.invoke().collect {
+            getMoviesUseCase.invoke().collect {
                 handleTask(it)
-                _movieList.postValue(it)
+                _movies.postValue(it)
             }
         }
     }
