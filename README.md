@@ -1,2 +1,2 @@
 
-Movie application By Berkavc.
+Base Compose Application.

@@ -9,7 +9,7 @@ plugins {
 android {
     compileSdkVersion 33
     defaultConfig {
-        applicationId "com.task.movieapp"
+        applicationId "com.sipay.baseapplicationcompose"
         minSdkVersion 23
         targetSdkVersion 33
         versionCode 1
@@ -41,6 +41,37 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //Ui
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+    implementation 'androidx.fragment:fragment-ktx:1.5.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //Navigation Component
+    def nav_version = "2.6.0-alpha04"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //Work
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
     //Hilt
     implementation 'com.google.dagger:hilt-android:2.44.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -48,15 +79,17 @@ dependencies {
     kapt 'com.google.dagger:hilt-android-compiler:2.44.2'
     kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+
+    //Dependency Injection
+    api "javax.inject:javax.inject:1@jar"
+
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 
     //Splash
     implementation 'androidx.core:core-splashscreen:1.0.0'
-
-    //Modules
-    implementation project(':common')
-    implementation project(':data')
-    implementation project(':domain')
 }

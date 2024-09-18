@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="font_family_light" translatable="false">sans-serif-light</string> <!-- roboto light -->
-    <string name="font_family_medium" translatable="false">sans-serif-medium</string> <!-- roboto medium (android 5.0) -->
-    <string name="font_family_regular" translatable="false">sans-serif</string> <!-- roboto regular -->
-    <string name="font_family_condensed" translatable="false">sans-serif-condensed</string> <!-- roboto condensed -->
-    <string name="font_family_black" translatable="false">sans-serif-black</string> <!-- roboto black -->
-    <string name="font_amount" translatable="false">inter</string> <!-- roboto thin (android 4.2) -->
-</resources>

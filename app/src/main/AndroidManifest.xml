@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.task.movieapp">
+    package="com.sipay.baseapplicationcompose">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.task.movieapp.MovieApp"
-        android:allowBackup="true"
+        android:name="com.sipay.baseapplicationcompose.BaseApplicationComposeApp"
+        android:allowBackup="false"
         android:icon="@drawable/movieapp_icon"
         android:label="@string/app_name"
         android:roundIcon="@drawable/movieapp_icon"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MovieApp">
+        android:theme="@style/Theme.BaseApplicationCompose"
+        android:dataExtractionRules="@xml/data_extraction_rules">
 
         <activity
-            android:name="com.task.movieapp.ui.main.MainActivity"
+            android:name="com.sipay.baseapplicationcompose.ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
@@ -24,6 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.sipay.baseapplicationcompose.errordialog.ErrorDialogActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/customErrorDialogTheme"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

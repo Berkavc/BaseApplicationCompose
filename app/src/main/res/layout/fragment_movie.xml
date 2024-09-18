@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.task.movieapp.ui.movie.MovieViewModel" />
+            type="com.sipay.baseapplicationcompose.ui.movie.MovieViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

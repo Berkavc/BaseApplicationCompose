@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/movieFragment"
         android:label="@string/fragment_movie_label"
-        android:name="com.task.movieapp.ui.movie.MovieFragment"
+        android:name="com.sipay.baseapplicationcompose.ui.movie.MovieFragment"
         tools:layout="@layout/fragment_movie">
 
         <action
@@ -24,12 +24,12 @@
     <fragment
         android:id="@+id/movieDetailFragment"
         android:label="@string/fragment_movie_label"
-        android:name="com.task.movieapp.ui.moviedetail.MovieDetailFragment"
+        android:name="com.sipay.baseapplicationcompose.ui.moviedetail.MovieDetailFragment"
         tools:layout="@layout/fragment_movie_detail">
         <argument
             android:name="result"
             android:defaultValue="@null"
-            app:argType="com.task.movieapp.domain.model.Result"
+            app:argType="com.sipay.baseapplicationcompose.model.Result"
             app:nullable="true" />
     </fragment>
 

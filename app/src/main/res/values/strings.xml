@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name" translatable="false">MovieApp</string>
+    <string name="app_name" translatable="false">BaseApplicationCompose</string>
+
+    <!-- 1) Error Strings: -->
+    <!--1.1) Error Dialog -->
+    <string name="error_dialog_failure_message">Cannot access the server at the moment, please try again!</string>
+    <string name="error_dialog_ok_message">Continue</string>
+    <string name="error_dialog_create_new_note_rule">Title cannot be empty!</string>
 
     <!--Fragment Labels: -->
     <string name="fragment_movie_label" translatable="false">fragmentMovie</string>
@@ -18,5 +24,7 @@
 
     <!--1.2) Movie Detail Page -->
     <string name="movie_detail_rating">Rating: %1$s</string>
+
+
 
 </resources>
